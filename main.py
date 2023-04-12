@@ -1,6 +1,6 @@
 from PIL import Image
 from time import sleep
-from random import randint
+from random import randint, choice
 import os
 import ctypes
 
@@ -16,8 +16,8 @@ class SpaceImage:
         self.x = randint(0,screen[0]-self.image.size[0])
         self.y = randint(0,screen[1]-self.image.size[1])
 
-        self.vector_x = "RIGHT"
-        self.vector_y = "DOWN"
+        self.vector_x = choice(["RIGHT","LEFT"])
+        self.vector_y = choice(["DOWN","UP"])
 
 
 class SpacePaper:
