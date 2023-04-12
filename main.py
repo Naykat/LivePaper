@@ -31,7 +31,7 @@ class SpacePaper:
         return image
 
     def play(self) -> None:
-        background = Image.new("RGB",self.screen)
+        background = Image.new("RGBA",self.screen, (0,0,0,0))
         try: 
             for space_image in self.images:
                 #Rotation
