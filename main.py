@@ -31,12 +31,13 @@ class SpacePaper:
         return image
 
     def play(self) -> None:
-        background = Image.new("RGBA",self.screen, (0,0,0,0))
+        background = Image.new("RGB",self.screen)
         try: 
             for space_image in self.images:
                 #Rotation
                 if space_image.spin:
                     image = space_image.image.rotate(space_image.degree, expand = True)
+                    image = image.convert("RGBA")
                     space_image.degree = (space_image.degree+3)%360
                 else:
                     image = space_image.image
